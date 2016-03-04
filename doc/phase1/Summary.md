@@ -31,6 +31,7 @@ Mike is an aspiring young research assistant at University of Toronto. While res
 - As an user, I want to search, and play music from Youtube without having the youtube tab added to my browser.
 - As an user, I want to pause the song from within the page I am currently browsing.
 - As a songwriter, I want to be able to quickly find a song with chords similar to the one I'm currently listening to, before I forget the name of that song in my mind, so that I can enhance my music analytical skills.
+- As a student, I want to be able to find a good cover of a song I've been listening to a lot these past few days, without being distracted from my current browser tasks, so that I can take a clean break from studying.
 	
 #### System Components
 - The minimum viable product is to support only YouTube. If possible we will extend the add-on to support other music services (Pandora, Spotify, etc.).
