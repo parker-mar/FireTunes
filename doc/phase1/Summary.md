@@ -24,7 +24,11 @@
 
 Personna:
 
-	Mike is a research assistant at University of Toronto. Due to the nature of his job he has to browse the internet for research for many number of hours, his favourite browser is Firefox and he also likes to listen to Music on youtube while he is searching for articles. On average Mike has 10 to 15 tabs open. For Mike this addon will eliminate the need to have a youtube tab, and choosing a song, or pausing it could be done without having to switch to a new Tab. For mike this addon  will help him avoid distraction, and be more efficient in his research.
+Mike is a research assistant at University of Toronto. Due to the nature of his job he has to browse the internet for research for many
+number of hours, his favourite browser is Firefox and he also likes to listen to Music on youtube while he is searching for articles. On
+average Mike has 10 to 15 tabs open. For Mike this addon will eliminate the need to have a youtube tab, and choosing a song, or pausing
+it could be done without having to switch to a new Tab. For mike this addon  will help him avoid distraction, and be more efficient in
+his research.
 
 Use Cases:
 
@@ -51,7 +55,8 @@ Use Cases:
 
 	
 # What are the different components of the system? 
-- The minimum viable product is to support only YouTube. If possible we will extend the add-on to support other music services (Pandora, Spotify, etc.).
+- The minimum viable product is to support only YouTube. If possible we will extend the add-on to support other music services (Pandora,
+- Spotify, etc.).
 - Autoplay music(when one song finishes, move on to the next song).
 - Load previously created playlists onto the system.
 - Build a custom playlist, select multiple YouTube songs that will autoplay seamlessly. Another extension if time permits, would be to creation cross-platform playlists, (E.g. choose songs from YouTube, Pandora, Spotify, etc.).
