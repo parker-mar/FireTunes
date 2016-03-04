@@ -36,7 +36,7 @@ his research.
 	As an addon user, I want to search, and play music from Youtube without having the youtube tab added to my browser.
 	As an addon user, I want to pause the song from within the page I am currently browsing.
 	
-- What are the different components of the system? 
+#### System Components
 	- The minimum viable product is to support only YouTube. If possible we will extend the add-on to support other music services (Pandora,
 	- Spotify, etc.).
 	- Autoplay music(when one song finishes, move on to the next song).
