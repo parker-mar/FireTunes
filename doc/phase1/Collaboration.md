@@ -113,5 +113,5 @@ We listed and fleshed-out some of the major ideas in https://docs.google.com/doc
     - g2maroc is familiar with Youtube API so he will be mainly responsible for implementing features related to connecting Youtube Info to the browser platform.
     - Others will mainly focus on feature implementation and testing.
 
-# How will you make decisions?
-- Dicisions will be made through voting on slack or during an in-person meeting.
+- How will you make decisions?
+	- Decisions will be agreed upon on slack or during an in-person meeting.
