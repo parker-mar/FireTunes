@@ -21,7 +21,7 @@ FireYouMusic
     - By selecting users who currently use YouTube to listen to music, we can track the time and ease of use before using FireYouMusic and after.
     - By directly comparing the results we can have a good estimation of how valuale FireYouMusic is for users. 
 
-# Project details:
+# Draft artifacts:
 
 Persona:
 
@@ -36,10 +36,14 @@ Use Cases:
 	As an addon user, I want to search, and play music from Youtube without having the youtube tab added to my browser.
 	As an addon user, I want to pause the song from within the page I am currently browsing.
 
-- How are you planning to build it?
-	- We have roughly three weeks for add-on development.
-	- Weekly team meetings will be held to keep track of project progress.
 
+
+# Project Plan:
+
+- We have roughly three weeks for add-on development.
+- Weekly team meetings will be held to keep track of project progress.
+
+Here is a week-by-week breakdown:
 #### Week 1 (by March 11):
 - Complete UI mockups of the add-on.
 - Define user stories and major features for Minimal Viable Product.
