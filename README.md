@@ -1,1 +1,1 @@
-Phase 1 Documents can be found [here](/doc/phase1).
+Phase 1 Documents can be found [here](/docs/phase1).
