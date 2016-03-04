@@ -1,8 +1,8 @@
-# Project Introduction
-#### Project name
+# Introduction
+#### Name
 FireYouMusic
 
-#### Project description 
+#### Description 
 - What are you planning to build?
     - We are planning to build a firefox add-on which will allow users to play music from YouTube without having to have a tab where the music is played. 
     - The user will be able to rewind, play/pause, and fast forward music all through the add-on.
@@ -21,7 +21,7 @@ FireYouMusic
     - By selecting users who currently use YouTube to listen to music, we can track the time and ease of use before using FireYouMusic and after.
     - By directly comparing the results we can have a good estimation of how valuale FireYouMusic is for users. 
 
-# Project initial artifacts:
+# Initial artifacts:
 
 Persona
 
@@ -35,8 +35,15 @@ Use Cases
 
 	As an addon user, I want to search, and play music from Youtube without having the youtube tab added to my browser.
 	As an addon user, I want to pause the song from within the page I am currently browsing.
+	
+- What are the different components of the system? 
+	- The minimum viable product is to support only YouTube. If possible we will extend the add-on to support other music services (Pandora,
+	- Spotify, etc.).
+	- Autoplay music(when one song finishes, move on to the next song).
+	- Load previously created playlists onto the system.
+	- Build a custom playlist, select multiple YouTube songs that will autoplay seamlessly. Another extension if time permits, would be to creation cross-platform playlists, (E.g. choose songs from YouTube, Pandora, Spotify, etc.).
 
-# Project Plan:
+# Plan:
 
 - We have roughly three weeks for add-on development.
 - Weekly team meetings will be held to keep track of project progress.
@@ -56,20 +63,12 @@ Here is a week-by-week breakdown:
 - Complete implementation for all the features and user stories.
 - Final testing and documentation.
 
+- What are some of the anticipated challenges? 
+	- The largest challenge will be understanding Firefox add-ons since no one on the team has experience with them.
+	- Another challenge will be utilizing the YouTube API since only one team member has experience with that.
+	- How to communicate effectively within a team of 6 will also be a challenge. 
 	
-# What are the different components of the system? 
-- The minimum viable product is to support only YouTube. If possible we will extend the add-on to support other music services (Pandora,
-- Spotify, etc.).
-- Autoplay music(when one song finishes, move on to the next song).
-- Load previously created playlists onto the system.
-- Build a custom playlist, select multiple YouTube songs that will autoplay seamlessly. Another extension if time permits, would be to creation cross-platform playlists, (E.g. choose songs from YouTube, Pandora, Spotify, etc.).
-
-# What are some of the anticipated challenges? 
-- The largest challenge will be understanding Firefox add-ons since no one on the team has experience with them.
-- Another challenge will be utilizing the YouTube API since only one team member has experience with that.
-- How to communicate effectively within a team of 6 will also be a challenge. 
-	
-# How will you divide the work?
-- We will list all components of the projects, and weight them by the numbers of hours they take as well as priority. 
-- We plan to utilize the pair programming methodology in order to helpwith efficient collaboration. 
-- We will list all the tasks, and then members will choose what task they prefer to do through round-robin voting.
+- How will you divide the work?
+	- We will list all components of the projects, and weight them by the numbers of hours they take as well as priority. 
+	- We plan to utilize the pair programming methodology in order to helpwith efficient collaboration. 
+	- We will list all the tasks, and then members will choose what task they prefer to do through round-robin voting.
