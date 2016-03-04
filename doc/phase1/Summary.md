@@ -25,11 +25,7 @@ FireYouMusic
 
 #### Persona
 
-Mike is a research assistant at University of Toronto. Due to the nature of his job he has to browse the internet for research for many
-number of hours, his favourite browser is Firefox and he also likes to listen to Music on youtube while he is searching for articles. On
-average Mike has 10 to 15 tabs open. For Mike this addon will eliminate the need to have a youtube tab, and choosing a song, or pausing
-it could be done without having to switch to a new Tab. For mike this addon  will help him avoid distraction, and be more efficient in
-his research.
+Mike is an aspiring young research assistant at University of Toronto. While researching, he likes to listen to Music on youtube. On average, Mike has 10 to 15 tabs open. Mike often gets confused managing and flipping between so many tabs, in particular, tabs used for playing music. Typical tasks for him in managing the music player would be finding a song, playing it, or pausing it. 
 
 #### Use Cases
 - As an addon user, I want to search, and play music from Youtube without having the youtube tab added to my browser.
