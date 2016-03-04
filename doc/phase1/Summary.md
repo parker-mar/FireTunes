@@ -5,7 +5,7 @@ FireYouMusic
 #### Description 
 - What are you planning to build?
     - We are planning to build a firefox add-on which will allow users to play music from YouTube without having to have a tab where the music is played. 
-    - The user will be able to rewind, play/pause, and fast forward music all through the add-on.
+    - The user will be able to search, rewind, play/pause, and fast forward music all through the add-on.
     - The goal of the addon is to enhance the person’s web browsing and music experience by removing the music playing tab while still allowing the user to play, pause, and choose a song from YouTube without leaving the page they are currently browsing.
 
 - Who are you building it for?
@@ -28,8 +28,9 @@ FireYouMusic
 Mike is an aspiring young research assistant at University of Toronto. While researching, he likes to listen to Music on youtube. On average, Mike has 10 to 15 tabs open. Mike often gets confused managing and flipping between so many tabs, in particular, tabs used for playing music. Typical tasks for him in managing the music player would be finding a song, playing it, or pausing it. 
 
 #### Use Cases
-- As an addon user, I want to search, and play music from Youtube without having the youtube tab added to my browser.
-- As an addon user, I want to pause the song from within the page I am currently browsing.
+- As an user, I want to search, and play music from Youtube without having the youtube tab added to my browser.
+- As an user, I want to pause the song from within the page I am currently browsing.
+- As a songwriter, I want to be able to quickly find a song with chords similar to the one I'm currently listening to, before I forget the name of that song in my mind, so that I can enhance my music analytical skills.
 	
 #### System Components
 - The minimum viable product is to support only YouTube. If possible we will extend the add-on to support other music services (Pandora,
