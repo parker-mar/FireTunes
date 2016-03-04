@@ -96,6 +96,7 @@ We listed and fleshed-out some of the major ideas in https://docs.google.com/doc
     - All members
 - Notes:
     - Finalized and agreed on a single idea
+    - Agreed upon future logistics: workflow and scheduling.
 
 # Future Meeting Logistics 
 - Availability times: http://doodle.com/poll/srrmspdbxbia8gxm
