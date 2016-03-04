@@ -37,11 +37,11 @@ his research.
 	As an addon user, I want to pause the song from within the page I am currently browsing.
 	
 #### System Components
-	- The minimum viable product is to support only YouTube. If possible we will extend the add-on to support other music services (Pandora,
-	- Spotify, etc.).
-	- Autoplay music(when one song finishes, move on to the next song).
-	- Load previously created playlists onto the system.
-	- Build a custom playlist, select multiple YouTube songs that will autoplay seamlessly. Another extension if time permits, would be to creation cross-platform playlists, (E.g. choose songs from YouTube, Pandora, Spotify, etc.).
+- The minimum viable product is to support only YouTube. If possible we will extend the add-on to support other music services (Pandora,
+- Spotify, etc.).
+- Autoplay music(when one song finishes, move on to the next song).
+- Load previously created playlists onto the system.
+- Build a custom playlist, select multiple YouTube songs that will autoplay seamlessly. Another extension if time permits, would be to creation cross-platform playlists, (E.g. choose songs from YouTube, Pandora, Spotify, etc.).
 
 # Plan
 
