@@ -33,9 +33,8 @@ Mike is an aspiring young research assistant at University of Toronto. While res
 - As a songwriter, I want to be able to quickly find a song with chords similar to the one I'm currently listening to, before I forget the name of that song in my mind, so that I can enhance my music analytical skills.
 	
 #### System Components
-- The minimum viable product is to support only YouTube. If possible we will extend the add-on to support other music services (Pandora,
-- Spotify, etc.).
-- Autoplay music(when one song finishes, move on to the next song).
+- The minimum viable product is to support only YouTube. If possible we will extend the add-on to support other music services (Pandora, Spotify, etc.).
+- Autoplay music (when one song finishes, move on to the next song).
 - Load previously created playlists onto the system.
 - Build a custom playlist, select multiple YouTube songs that will autoplay seamlessly. Another extension if time permits, would be to creation cross-platform playlists, (E.g. choose songs from YouTube, Pandora, Spotify, etc.).
 
