@@ -63,12 +63,12 @@ Here is a week-by-week breakdown:
 - Complete implementation for all the features and user stories.
 - Final testing and documentation.
 
-- What are some of the anticipated challenges? 
+#### What are some of the anticipated challenges? 
 	- The largest challenge will be understanding Firefox add-ons since no one on the team has experience with them.
 	- Another challenge will be utilizing the YouTube API since only one team member has experience with that.
 	- How to communicate effectively within a team of 6 will also be a challenge. 
 	
-- How will you divide the work?
+#### How will you divide the work?
 	- We will list all components of the projects, and weight them by the numbers of hours they take as well as priority. 
 	- We plan to utilize the pair programming methodology in order to helpwith efficient collaboration. 
 	- We will list all the tasks, and then members will choose what task they prefer to do through round-robin voting.
