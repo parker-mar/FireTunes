@@ -21,7 +21,7 @@ FireYouMusic
     - By selecting users who currently use YouTube to listen to music, we can track the time and ease of use before using FireYouMusic and after.
     - By directly comparing the results we can have a good estimation of how valuale FireYouMusic is for users. 
 
-# Initial artifacts:
+# Initial artifacts
 
 Persona
 
@@ -43,7 +43,7 @@ Use Cases
 	- Load previously created playlists onto the system.
 	- Build a custom playlist, select multiple YouTube songs that will autoplay seamlessly. Another extension if time permits, would be to creation cross-platform playlists, (E.g. choose songs from YouTube, Pandora, Spotify, etc.).
 
-# Plan:
+# Plan
 
 - We have roughly three weeks for add-on development.
 - Weekly team meetings will be held to keep track of project progress.
