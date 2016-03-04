@@ -21,9 +21,9 @@ FireYouMusic
     - By selecting users who currently use YouTube to listen to music, we can track the time and ease of use before using FireYouMusic and after.
     - By directly comparing the results we can have a good estimation of how valuale FireYouMusic is for users. 
 
-# Project draft artifacts:
+# Project initial artifacts:
 
-- Persona:
+Persona
 
 Mike is a research assistant at University of Toronto. Due to the nature of his job he has to browse the internet for research for many
 number of hours, his favourite browser is Firefox and he also likes to listen to Music on youtube while he is searching for articles. On
@@ -31,12 +31,10 @@ average Mike has 10 to 15 tabs open. For Mike this addon will eliminate the need
 it could be done without having to switch to a new Tab. For mike this addon  will help him avoid distraction, and be more efficient in
 his research.
 
-- Use Cases:
+Use Cases
 
 	As an addon user, I want to search, and play music from Youtube without having the youtube tab added to my browser.
 	As an addon user, I want to pause the song from within the page I am currently browsing.
-
-
 
 # Project Plan:
 
