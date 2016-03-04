@@ -1,3 +1,0 @@
-# group6
-
-Documents
