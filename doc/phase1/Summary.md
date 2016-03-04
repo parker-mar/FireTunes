@@ -22,7 +22,7 @@
 
 # Project details:
 
-Personna:
+Persona:
 
 Mike is a research assistant at University of Toronto. Due to the nature of his job he has to browse the internet for research for many
 number of hours, his favourite browser is Firefox and he also likes to listen to Music on youtube while he is searching for articles. On
@@ -37,7 +37,7 @@ Use Cases:
 
 - How are you planning to build it?
 	- We have roughly three weeks for add-on development.
-	- Weekly team meeting will be held to keep track of project progress.
+	- Weekly team meetings will be held to keep track of project progress.
 
 #### Week 1 (by March 11):
 - Complete UI mockups of the add-on.
@@ -69,4 +69,4 @@ Use Cases:
 # How will you divide the work?
 - We will list all components of the projects, and weight them by the numbers of hours they take as well as priority. 
 - We plan to utilize the pair programming methodology in order to helpwith efficient collaboration. 
-- We will list all the tasks, and then members will choose what task they prefer to do.
+- We will list all the tasks, and then members will choose what task they prefer to do through round-robin voting.
