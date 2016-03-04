@@ -32,9 +32,8 @@ it could be done without having to switch to a new Tab. For mike this addon  wil
 his research.
 
 #### Use Cases
-
-	As an addon user, I want to search, and play music from Youtube without having the youtube tab added to my browser.
-	As an addon user, I want to pause the song from within the page I am currently browsing.
+- As an addon user, I want to search, and play music from Youtube without having the youtube tab added to my browser.
+- As an addon user, I want to pause the song from within the page I am currently browsing.
 	
 #### System Components
 - The minimum viable product is to support only YouTube. If possible we will extend the add-on to support other music services (Pandora,
