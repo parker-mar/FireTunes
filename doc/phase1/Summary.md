@@ -1,5 +1,6 @@
 # Project Introduction
-#### FireYouMusic
+#### Project name
+FireYouMusic
 
 #### Project description 
 - What are you planning to build?
