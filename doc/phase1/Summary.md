@@ -13,13 +13,13 @@ FireYouMusic
 	- FireYouMusic is designed for all age demographics. 
 	
 - Why would they find what you want to build useful/valuable?
-    - User's who listen to music on YouTube waste a lot of time finding, and then selecting the YouTube tab whenever they want to pause their music, skip a song, or select a new song.
-    - FireYouMusic will simplify user's music listening experience on YouTube and save users valuable time.
+    - Users who listen to music on YouTube waste a lot of time finding, and then selecting the YouTube tab whenever they want to pause their music, skip a song, or select a new song.
+    - FireYouMusic will simplify the music listening experience over YouTube by saving time.
 
 - How would one validate that what you built was useful?
-    - FireYouMusic can easily be validated through user testing.
+    - FireYouMusic can be easily validated through user testing.
     - By selecting users who currently use YouTube to listen to music, we can track the time and ease of use before using FireYouMusic and after.
-    - By directly comparing the results we can have a good estimation of how valuale FireYouMusic is for users. 
+    - By comparing the results, we can estimate of how effective FireYouMusic is. 
 
 # Initial artifacts
 
