@@ -66,6 +66,8 @@
 	- Project Management.
 
 # Meeting Notes
+We listed and fleshed-out some of the major ideas in https://docs.google.com/document/d/1TifaNIdhrzj6VnxpbnQcQA4FL4DPdpJUbO1VvbeTO84/edit 
+
 #### Meeting 1 (Feb 5, 4-5PM @ BA1200)
 - In attendance:
     - Tyler, WIlson, Thomas, Mohamed, Parker.
