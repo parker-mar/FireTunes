@@ -51,7 +51,7 @@
     - Multiple programming language experience: Java, Python, C.
     - Strong back-end skills. 
 
-#### Parker Aldric Mar
+#### Parker Aldric Mar (CDF ID: g2marpar, GitHub ID: parker-mar)
 - Experience:
     - PEY at IBM.
     - Designed and implemented backend on multiple mobile/web apps.
