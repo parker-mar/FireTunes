@@ -1,0 +1,30 @@
+{
+
+  "manifest_version": 2,
+  "name": "Youtunes",
+  "version": "0.1",
+
+  "description": "Listen to music on Youtube, Pandora, or Spotify without having the tab open!",
+  "homepage_url": "https://github.com/csc302-2016-spring/group6",
+  "icons": {
+    "48": "icons/youtube.jpg"
+  },
+
+  "applications": {
+    "gecko": {
+      "id": "YouTunes@CSC302",
+      "strict_min_version": "45.0"
+    }
+  },
+
+  "permissions": [
+    "activeTab"
+  ],
+
+  "browser_action": {
+    "default_icon": "icons/youtube.jpg",
+    "default_title": "YouTunes",
+    "default_popup": "popup/choose_music.html"
+  }
+
+}
