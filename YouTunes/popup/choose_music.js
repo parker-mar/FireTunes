@@ -27,6 +27,6 @@ document.addEventListener("click", function(e) {
       chosenMusicURL = "http://www.spotify.com";
       break;
   }
-
+  
   window.location = chosenMusicURL;
 });
