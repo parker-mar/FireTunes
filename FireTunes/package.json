@@ -1,0 +1,16 @@
+{
+  "title": "FireTunes",
+  "name": "firetunes",
+  "version": "1.0.0",
+  "description": "Play youtube videos without having an extra tab open",
+  "main": "index.js",
+  "author": "group 6",
+  "engines": {
+    "firefox": ">=38.0a1",
+    "fennec": ">=38.0a1"
+  },
+  "license": "MIT",
+  "keywords": [
+    "jetpack"
+  ]
+}
