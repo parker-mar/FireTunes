@@ -1,5 +1,5 @@
-function musicNameToURL(beastName) {
-  switch (beastName) {
+function musicNameToURL(musicName) {
+  switch (musicName) {
     case "Youtube":
       return chrome.extension.getURL("icons/youtube.jpg");
     case "Pandora":
@@ -8,6 +8,13 @@ function musicNameToURL(beastName) {
       return chrome.extension.getURL("icons/youtube.jpg");
   }
 }
+
+var panel = require("sdk/panel").Panel({
+	width: 600,
+	height: 600,
+	contentURL: "http://www.youtube.com",
+	position: button
+});
 
 // document.addEventListener("click", function(e) {
 //   if (!e.target.classList.contains("music")) {
@@ -47,6 +54,6 @@ function musicButton(channel) {
       chosenMusicURL = "http://www.spotify.com";
       break;
   }
-  window.location = chosenMusicURL;
-
+  //window.location = chosenMusicURL;
+  panel.show();
 }

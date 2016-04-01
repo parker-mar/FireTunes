@@ -31,9 +31,9 @@ function search() {
     var str = '';
     
     for ( var i=0;i<response.items.length;i++){
-	str+='<b class="results" onclick="playVideo(this)" id="'+response.items[i].id.videoId +'">'+(i+1)+')  '+ response.items[i].snippet.title+'  ||    </b> ';
-}
-    $('#search-container').html('<marquee>' + str + '</marquee>');
+	str+='<tr id="' + response.items[i].id.videoId + '"><td>' + (i + 1) + ')' + response.items[i].snippet.title + '<img src="addSong.png" style="width:30px;height:30px;">' + '</td></tr>';
+	}
+    $('#search-container').html('<table border="1" style="width:100%">' + str + '</table>');
   });
 }
 function playVideo (e){

@@ -9,8 +9,8 @@ var button = ToggleButton({
 	onChange: handleChange
 });
 var panel = require("sdk/panel").Panel({
-	width: 200,
-	height: 100,
+	width: 600,
+	height: 600,
 	contentURL: "http://amdt.ca/g6/search-frame.html",
 	position: button
 });
