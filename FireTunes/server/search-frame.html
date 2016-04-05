@@ -10,12 +10,16 @@
 <div class ="col-md-4">
 <input type="text" id="query" placeholder="Drake Hotline">
 <button type="submit" class="btn btn-danger" id="search-button" disabled onclick="search()" value="Submit"> Submit</button>
-<img src="previousSong.jpeg" onclick="" alt="Previous Song" style="width:30px;height:30px;">
-<img src="play.png" onclick="playvideo()" alt="Play" style="width:30px;height:30px;">
-<img src="pause.png" onclick="pausevideo()" alt="Pause" style="width:30px;height:30px;">
-<img src="nextSong.jpeg" onclick="" alt="Next Song" style="width:30px;height:30px;">
+<img src="icons/previousSong.jpeg" onclick="previousSong()" alt="Previous Song" style="width:30px;height:30px;">
+<img src="icons/play.png" onclick="playvideo()" alt="Play" style="width:30px;height:30px;">
+<img src="icons/pause.png" onclick="pausevideo()" alt="Pause" style="width:30px;height:30px;">
+<img src="icons/nextSong.jpeg" onclick="nextSong()" alt="Next Song" style="width:30px;height:30px;">
 </div>
+</div>
+<div class="container">
 <div id="search-container" class="col-md-3"></div>
+<div id="playList" class="col-md-3"></div>
+</div>
 </div>
 
 <div id="player"></div>
@@ -35,8 +39,8 @@
       var player;
       function onYouTubeIframeAPIReady() {
         player = new YT.Player('player', {
-          height: '10',
-          width: '10',
+          height: '100',
+          width: '100',
           videoId: 'M7lc1UVf-VE',
           events: {
             'onReady': onPlayerReady,
@@ -66,5 +70,12 @@
       
 
 </script>
+<style>
+table {
+    float:left;
+    width:33%;
+}
+</style>
+
 </body>
 </html>
