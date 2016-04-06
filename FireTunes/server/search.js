@@ -12,14 +12,127 @@ googleApiClientReady = function() {
     });
 };
 
+//
+///* Too late:  type 2 (using yt data api for playlists) */
+//// Create a private playlist.
+//var request = gapi.client.youtube.playlists.insert({
+//    part: 'snippet,status',
+//    resource: {
+//        snippet: {
+//            title: 'Test Playlist',
+//            description: 'A private playlist created with the YouTube API'
+//        },
+//        status: {
+//            privacyStatus: 'private'
+//        }
+//    }
+//});
+//
+//function playSong(e) {
+//    player.playVideo();
+//}
+//
+//function pauseSong(e) {
+//    player.pauseVideo();
+//}
+//
+//function playNextSong(e) {
+//    player.nextVideo();
+//}
+//
+//function playPreviousSong(e) {
+//    player.previousVideo()
+//}
+//
+//function addToPlaylist(id) {
+//    var details = {
+//        videoId: id,
+//        kind: 'youtube#video'
+//    };
+//    var request = gapi.client.youtube.playlistItems.insert({
+//        part: 'snippet',
+//        resource: {
+//            snippet: {
+//                playlistId: playlistId,
+//                resourceId: details
+//            }
+//        }
+//    });
+//
+//    playlistStr.push('<tr id="' + id + '" ><td>' + e.name +
+//            //'<img src="icons/deleteSong.png" onclick="deleteFromPlaylist(this)" style="width:15px;height:15px;"></td></tr>'
+//        '<img src="icons/deleteSong.png" onclick="deleteFromPlaylist(' + this + ')" style="width:15px;height:15px;"></td></tr>'
+//    );
+//}
+//
+//// Remove song from playlist
+//function deleteFromPlaylist(e) {
+//    var request = gapi.client.youtube.playlistItems.delete({
+//        part: 'snippet',
+//        resource: {
+//            snippet: {
+//                playlistId: playlistId,
+//                resourceId: details
+//            }
+//        }
+//    });
+//
+//    console.log("deleteFromPlaylist2: " + e);
+//    console.log("deleteFromPlaylist: " + e + e.id);
+//
+//    // Update playlist, its string, and its pointer
+//    i = playlist.indexOf(e.id.videoId);
+//    playlist.splice(i, 1);
+//    playlistStr.splice(i, 1);
+//    if (playlistPointer == i && playlist.length > 0) {
+//        // Then the currently playing song is removed: move the pointer to that of the previous song.
+//        // Shouldn't be here, though, if the song being removed is the last in the playlist.
+//        playlistPointer = (playlistPointer - 1 + playlist.length) % playlist.length;
+//    }
+//
+//    console.log("updated playlist:\n" + playlist);
+//
+//    // Update UI
+//    $('#playList').html(
+//        '<table border="1" style="width:50%"><tr> <td><b> Current playlist </b></td></tr>' +
+//        playlistStr.join(" ") + '</table>');
+//}
+//
+///* Search logic */
+//
+//function search() {
+//    console.log(gapi.client.youtube);
+//
+//    // Prepare a search request
+//    var request = gapi.client.youtube.search.list({
+//        q: $('#query').val(),
+//        part: 'snippet',
+//        maxResuslts: 6
+//    });
+//
+//    // Make a search request
+//    request.execute(function(response) {
+//        var str = '';
+//
+//        for (var i = 0; i < response.items.length; i++) {
+//            str += '<tr><td>' + (i + 1) + ')' + response.items[i].snippet.title +
+//                '<img name="' + response.items[i].snippet.title +
+//                '"src="icons/addSong.png" id="' + response.items[i].id.videoId +
+//                '" onclick="addToPlaylist(this)" style="width:15px;height:15px;"> </td></tr>';
+//        }
+//
+//        $('#search-container')
+//            .html('<table border="1" style="width:50%"><tr> <td> <b> Search Result </b></td></tr>' + str + '</table>');
+//    });
+//}
+
+
 
 /* Playlist logic */
 // https://developers.google.com/youtube/iframe_api_reference#Playback_controls
 // TODO can't execute videos with ads and those not allowed outside of youtube (should show user error, or hide
 // such videos from search menu).
 // TODO make sure works on own computer.
-// TODO volume slider based on percentage [player.setVolume(volume:Number):Void]
-
 
 // IFrame API can't modify playlist, only replace it. So we have to keep track of our own.
 // Assumption: The below data structures won't run into concurrency issues. Somewhat fair because operations are nimble.
@@ -72,8 +185,9 @@ function addToPlaylist(e) {
 
     // Update playlist, its string, and its pointer
     playlist.push(e.id);
-    playlistStr.push('<tr id="' + e.id + '" ><td>' + e.name +
-        '<img src="icons/deleteSong.png" onclick="deleteFromPlaylist(this)" style="width:15px;height:15px;"></td></tr>'
+    playlistStr.push('<tr><td>' + e.name +
+        //'<img src="icons/deleteSong.png" onclick="deleteFromPlaylist(this)" style="width:15px;height:15px;"></td></tr>'
+        '<img src="icons/deleteSong.png" id="' + e.id + '" onclick="deleteFromPlaylist(this)" style="width:15px;height:15px;"></td></tr>'
     );
 
     console.log("updated playlist:\n" + playlist);
@@ -86,13 +200,13 @@ function addToPlaylist(e) {
 
 // Remove song from playlist
 function deleteFromPlaylist(e) {
-    console.log("deleteFromPlaylist: " + e.id);
+    console.log("deleteFromPlaylist2: " + e.id);
 
     // Update playlist, its string, and its pointer
     i = playlist.indexOf(e.id);
     playlist.splice(i, 1);
     playlistStr.splice(i, 1);
-    if (playlistPointer == i && playlist.length > 0) {
+    if (playlist.length > 0 && i <= playlistPointer) {
         // Then the currently playing song is removed: move the pointer to that of the previous song.
         // Shouldn't be here, though, if the song being removed is the last in the playlist.
         playlistPointer = (playlistPointer - 1 + playlist.length) % playlist.length;
@@ -144,3 +258,126 @@ function search() {
             .html('<table border="1" style="width:50%"><tr> <td> <b> Search Result </b></td></tr>' + str + '</table>');
     });
 }
+
+
+/* Volume control logic */
+
+// http://jsfiddle.net/LucP/BPdKR/2/
+(function ($) {
+
+    var PPSliderClass = function (el, opts) {
+        var element = $(el);
+        var options = opts;
+        var isMouseDown = false;
+        var currentVal = 0;
+
+        element.wrap('<div/>')
+        var container = $(el).parent();
+
+        container.addClass('pp-slider');
+        container.addClass('clearfix');
+
+        container.append('<div class="pp-slider-min">-</div><div class="pp-slider-scale"><div class="pp-slider-button"><div class="pp-slider-divies"></div></div><div class="pp-slider-tooltip"></div></div><div class="pp-slider-max">+</div>');
+
+        if (typeof(options) != 'undefined' && typeof(options.hideTooltip) != 'undefined' && options.hideTooltip == true)
+        {
+            container.find('.pp-slider-tooltip').hide();
+        }
+
+        if (typeof(options.width) != 'undefined')
+        {
+            container.css('width',(options.width+'px'));
+        }
+        container.find('.pp-slider-scale').css('width',(container.width()-30)+'px');
+
+        var startSlide = function (e) {
+
+            isMouseDown = true;
+            var pos = getMousePosition(e);
+            startMouseX = pos.x;
+
+            lastElemLeft = ($(this).offset().left - $(this).parent().offset().left);
+            updatePosition(e);
+
+            return false;
+        };
+
+        var getMousePosition = function (e) {
+            //container.animate({ scrollTop: rowHeight }, options.scrollSpeed, 'linear', ScrollComplete());
+            var posx = 0;
+            var posy = 0;
+
+            if (!e) var e = window.event;
+
+            if (e.pageX || e.pageY) {
+                posx = e.pageX;
+                posy = e.pageY;
+            }
+            else if (e.clientX || e.clientY) {
+                posx = e.clientX + document.body.scrollLeft + document.documentElement.scrollLeft;
+                posy = e.clientY + document.body.scrollTop  + document.documentElement.scrollTop;
+            }
+
+            return { 'x': posx, 'y': posy };
+        };
+
+        var updatePosition = function (e) {
+            var pos = getMousePosition(e);
+
+            var spanX = (pos.x - startMouseX);
+
+            var newPos = (lastElemLeft + spanX)
+            var upperBound = (container.find('.pp-slider-scale').width()-container.find('.pp-slider-button').width());
+            newPos = Math.max(0,newPos);
+            newPos = Math.min(newPos,upperBound);
+            currentVal = Math.round((newPos/upperBound)*100,0);
+
+            player.setVolume(currentVal);
+
+            container.find('.pp-slider-button').css("left", newPos);
+            container.find('.pp-slider-tooltip').html(currentVal+'%');
+            container.find('.pp-slider-tooltip').css('left', newPos-6);
+        };
+
+        var moving = function (e) {
+            if(isMouseDown){
+                updatePosition(e);
+                return false;
+            }
+        };
+
+        var dropCallback = function (e) {
+            isMouseDown = false;
+            element.val(currentVal);
+            if(typeof element.options != 'undefined' && typeof element.options.onChanged == 'function'){
+                element.options.onChanged.call(this, null);
+            }
+
+        };
+
+        container.find('.pp-slider-button').bind('mousedown',startSlide);
+
+        $(document).mousemove(function(e) { moving(e); });
+        $(document).mouseup(function(e){ dropCallback(e); });
+
+    };
+
+    /*******************************************************************************************************/
+
+    $.fn.PPSlider = function (options) {
+        var opts = $.extend({}, $.fn.PPSlider.defaults, options);
+
+        return this.each(function () {
+            new PPSliderClass($(this), opts);
+        });
+    }
+
+    $.fn.PPSlider.defaults = {
+        width: 150
+    };
+
+
+})(jQuery);
+
+
+$("#slider1").PPSlider({width: 100});

@@ -1,11 +1,12 @@
 <!-- Citation: https://developers.google.com/youtube/iframe_api_reference#Revision_History -->
 
+
 <DOCTYPE html>
 <html lang="en">
 <head>
     <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/search.css" rel="stylesheet">
 </head>
-<body>
     <div class="row">
 
     <div class ="col-md-4">
@@ -13,10 +14,14 @@
         <button type="submit" class="btn btn-danger" id="search-button" disabled onclick="search()" value="Submit"> Submit</button>
         <img src="icons/play.png" onclick="playSong()" alt="Play" style="width:30px;height:30px;">
         <img src="icons/pause.png" onclick="pauseSong()" alt="Pause" style="width:30px;height:30px;">
-        <img src="icons/nextSong.jpeg" onclick="playNextSong()" alt="Next Song" style="width:30px;height:30px;">
         <img src="icons/previousSong.jpeg" onclick="playPreviousSong()" alt="Previous Song" style="width:30px;height:30px;">
+        <img src="icons/nextSong.jpeg" onclick="playNextSong()" alt="Next Song" style="width:30px;height:30px;">
+        <input type="hidden" value="40" id="slider1"/> <!-- TODO place this slider correctly. -->
     </div>
 
+    <!-- TODO: show clearly which is the top and bottom of the playlist, along with pointer to current song,
+    and what if add so many songs? Needs to scroll. Plus more info for playlist needed.
+    Search results also need to scroll... -->
     </div>
         <div class="container">
             <div id="search-container" class="col-md-3"></div>
@@ -27,10 +32,12 @@
     <!-- Load scripts-->
     <div id="player"></div>
 
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
     <script type="text/javascript" src="search.js"></script>
     <script src="//apis.google.com/js/client.js?onload=googleApiClientReady"></script>
     <script>
+          //TODO: make sure window size is correct
+
           // 1. This code loads the IFrame Player API code asynchronously.
           var tag = document.createElement('script');
 
@@ -53,9 +60,12 @@
                   }
                 });
 
-            // TODO
+//              // Too late: undo type 2 (using yt data api for playlists)
+//              player.setLoop(true);
+
+            // TODO uncomment below:
             // Hide the player
-//            player.setSize(0, 0);
+            // player.setSize(0, 0);
           }
 
           // 3. The API will call this function when the video player is ready.
@@ -63,6 +73,8 @@
             event.target.stopVideo();
           }
     </script>
+
+
 
     <style>
     table {
