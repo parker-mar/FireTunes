@@ -130,9 +130,11 @@ googleApiClientReady = function() {
 
 /* Playlist logic */
 // https://developers.google.com/youtube/iframe_api_reference#Playback_controls
-// TODO can't execute videos with ads and those not allowed outside of youtube (should show user error, or hide
-// such videos from search menu).
-// TODO make sure works on own computer.
+// Note: can't execute videos with ads and those not allowed outside of youtube (should show user error, or hide
+// such videos from search menu). -> Can explain this as imporvement, and use internal playlist instead.
+// Note: make sure works on own computer (but will just demo online).
+// Note: can't deal with concurrency issues between event handler action and user action, unless use youtube data API
+// as attempted above.
 
 // IFrame API can't modify playlist, only replace it. So we have to keep track of our own.
 // Assumption: The below data structures won't run into concurrency issues. Somewhat fair because operations are nimble.
@@ -261,6 +263,8 @@ function search() {
 
 
 /* Volume control logic */
+
+//TODO set initial slider button and tooltip to player.getVolume();
 
 // http://jsfiddle.net/LucP/BPdKR/2/
 (function ($) {

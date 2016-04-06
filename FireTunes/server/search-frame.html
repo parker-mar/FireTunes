@@ -19,9 +19,9 @@
         <input type="hidden" value="40" id="slider1"/> <!-- TODO place this slider correctly. -->
     </div>
 
-    <!-- TODO: show clearly which is the top and bottom of the playlist, along with pointer to current song,
-    and what if add so many songs? Needs to scroll. Plus more info for playlist needed.
-    Search results also need to scroll... -->
+    <!-- TODO: show clearly which is the top and bottom of the playlist, along with highlight on current song?
+    should be a window popup. Also, want to scroll to show several results - search results and queued results.
+    More info from playlist needed. See Mockups: https://github.com/csc302-2016-spring/group6/tree/master/Mockups -->
     </div>
         <div class="container">
             <div id="search-container" class="col-md-3"></div>
@@ -63,9 +63,8 @@
 //              // Too late: undo type 2 (using yt data api for playlists)
 //              player.setLoop(true);
 
-            // TODO uncomment below:
             // Hide the player
-            // player.setSize(0, 0);
+             player.setSize(0, 0);
           }
 
           // 3. The API will call this function when the video player is ready.
