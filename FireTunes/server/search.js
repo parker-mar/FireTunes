@@ -16,9 +16,10 @@ googleApiClientReady = function() {
 /* Playlist logic */
 // https://developers.google.com/youtube/iframe_api_reference#Playback_controls
 // TODO can't execute videos with ads and those not allowed outside of youtube (should show user error, or hide
-// such videos from search menu)
-// TODO hide the video itself (not the music) [player.setSize(width:Number, height:Number):Object]?
+// such videos from search menu).
+// TODO make sure works on own computer.
 // TODO volume slider based on percentage [player.setVolume(volume:Number):Void]
+
 
 // IFrame API can't modify playlist, only replace it. So we have to keep track of our own.
 // Assumption: The below data structures won't run into concurrency issues. Somewhat fair because operations are nimble.
@@ -32,10 +33,12 @@ var playlist = [];
 // Playlist of songs (string)
 var playlistStr = [];
 
-// Play song pointed to in the playlist
+// Play song pointed to in the playlist, or resume currently paused one.
 function playSong(e) {
-    if (playlistPointer < playlist.length) {
-        player.loadVideoById(playlist[playlistPointer]); //.videoId?
+    if (player.getPlayerState() == YT.PlayerState.PAUSED) {
+        player.playVideo();
+    } else if (playlistPointer < playlist.length) {
+        player.loadVideoById(playlist[playlistPointer]);
         player.playVideo();
     }
 }
@@ -49,7 +52,8 @@ function pauseSong(e) {
 function playNextSong(e) {
     if (playlist.length > 0) {
         playlistPointer = (playlistPointer + 1) % playlist.length;
-        playSong(e);
+        player.loadVideoById(playlist[playlistPointer]);
+        player.playVideo();
     }
 }
 
@@ -57,7 +61,8 @@ function playNextSong(e) {
 function playPreviousSong(e) {
     if (playlist.length > 0) {
         playlistPointer = (playlistPointer - 1 + playlist.length) % playlist.length;
-        playSong(e);
+        player.loadVideoById(playlist[playlistPointer]);
+        player.playVideo();
     }
 }
 
