@@ -9,14 +9,28 @@
 </head>
     <div class="row">
 
-    <div class ="col-md-4">
-        <input type="text" id="query" placeholder="Drake Hotline">
-        <button type="submit" class="btn btn-danger" id="search-button" disabled onclick="search()" value="Submit"> Submit</button>
-        <img src="icons/play.png" onclick="playSong()" alt="Play" style="width:30px;height:30px;">
-        <img src="icons/pause.png" onclick="pauseSong()" alt="Pause" style="width:30px;height:30px;">
-        <img src="icons/previousSong.jpeg" onclick="playPreviousSong()" alt="Previous Song" style="width:30px;height:30px;">
-        <img src="icons/nextSong.jpeg" onclick="playNextSong()" alt="Next Song" style="width:30px;height:30px;">
-        <input type="hidden" value="40" id="slider1"/> <!-- TODO place this slider correctly. -->
+    <div class ="col-md-2">
+	<table id="mainTable">
+	    <tr>
+		<td>
+		    <input type="text" id="query" placeholder="Drake Hotline">
+        	    <button type="submit" class="btn btn-danger" id="search-button" disabled onclick="search()" value="Submit"> Submit</button>
+		</td>
+	    </tr>
+	    <tr>
+		<td>
+		    <img src="icons/play.png" onclick="playSong()" alt="Play" style="width:30px;height:30px;">
+        	    <img src="icons/pause.png" onclick="pauseSong()" alt="Pause" style="width:30px;height:30px;">
+        	    <img src="icons/previousSong.jpeg" onclick="playPreviousSong()" alt="Previous Song" style="width:30px;height:30px;">
+        	    <img src="icons/nextSong.jpeg" onclick="playNextSong()" alt="Next Song" style="width:30px;height:30px;">
+		</td>
+	    </tr>
+	    <tr>
+		<td>
+		    <input type="hidden" value="40" id="slider1"/> <!-- TODO place this slider correctly. -->
+		</td>
+	    </tr>
+	</table>
     </div>
 
     <!-- TODO: show clearly which is the top and bottom of the playlist, along with highlight on current song?
@@ -24,8 +38,8 @@
     More info from playlist needed. See Mockups: https://github.com/csc302-2016-spring/group6/tree/master/Mockups -->
     </div>
         <div class="container">
-            <div id="search-container" class="col-md-3"></div>
-            <div id="playList" class="col-md-3"></div>
+            <div id="search-container" class="col-md-3""></div>
+            <div id="playList" class="col-md-2"></div>
         </div>
     </div>
 
@@ -72,15 +86,6 @@
             event.target.stopVideo();
           }
     </script>
-
-
-
-    <style>
-    table {
-        float:left;
-        width:33%;
-    }
-    </style>
 
 </body>
 </html>

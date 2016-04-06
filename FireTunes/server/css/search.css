@@ -7,3 +7,15 @@
 .pp-slider .pp-slider-scale .pp-slider-tooltip { width: 24px; height: 20px; position: relative; top: -5px; left: 0px; text-align: center; font-size: 10px; color: #aaa; }
 .pp-slider .pp-slider-min { float: left; width: 15px; color: #aaa; font-size: 10px; }
 .pp-slider .pp-slider-max { float: left; width: 15px; color: #aaa; font-size: 10px; text-align: right; }
+
+#search-container {
+  width: 50%;
+}
+
+#playList {
+  width: 45%;
+}
+
+#mainTable {
+  width: 100%;
+}

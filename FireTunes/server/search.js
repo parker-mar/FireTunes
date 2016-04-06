@@ -153,7 +153,9 @@ function playSong(e) {
     if (player.getPlayerState() == YT.PlayerState.PAUSED) {
         player.playVideo();
     } else if (playlistPointer < playlist.length) {
+	$("#playList-" + playlist[playlistPointer]).css("background-color", "white");
         player.loadVideoById(playlist[playlistPointer]);
+	$("#playList-" + playlist[playlistPointer]).css("background-color", "aqua");
         player.playVideo();
     }
 }
@@ -166,7 +168,9 @@ function pauseSong(e) {
 // Play next song, if any, including self (starts it from the beginning). Loops around.
 function playNextSong(e) {
     if (playlist.length > 0) {
+	$("#playList-" + playlist[playlistPointer]).css("background-color", "white");
         playlistPointer = (playlistPointer + 1) % playlist.length;
+	$("#playList-" + playlist[playlistPointer]).css("background-color", "aqua");
         player.loadVideoById(playlist[playlistPointer]);
         player.playVideo();
     }
@@ -175,7 +179,9 @@ function playNextSong(e) {
 // Play previous song, if any, including self (starts it from the beginning). Loops around.
 function playPreviousSong(e) {
     if (playlist.length > 0) {
+	$("#playList-" + playlist[playlistPointer]).css("background-color", "white");
         playlistPointer = (playlistPointer - 1 + playlist.length) % playlist.length;
+	$("#playList-" + playlist[playlistPointer]).css("background-color", "aqua");
         player.loadVideoById(playlist[playlistPointer]);
         player.playVideo();
     }
@@ -187,23 +193,32 @@ function addToPlaylist(e) {
 
     // Update playlist, its string, and its pointer
     playlist.push(e.id);
-    playlistStr.push('<tr><td>' + e.name +
+    // If playlist was empty, and new song was added, start playing that song
+    if (playlist.length == 1) {
+	player.loadVideoById(playlist[playlistPointer]);
+        player.playVideo();
+    }
+    playlistStr.push('<tr id="playList-' + e.id + '"><td>' + e.name +
         //'<img src="icons/deleteSong.png" onclick="deleteFromPlaylist(this)" style="width:15px;height:15px;"></td></tr>'
-        '<img src="icons/deleteSong.png" id="' + e.id + '" onclick="deleteFromPlaylist(this)" style="width:15px;height:15px;"></td></tr>'
+        '</td><td align="center"><img src="icons/deleteSong.png" id="' + e.id + '" onclick="deleteFromPlaylist(this)" style="width:25px;height:25px;"></td></tr>'
     );
 
     console.log("updated playlist:\n" + playlist);
 
     // Update UI
     $('#playList').html(
-        '<table border="1" style="width:50%"> <tr> <td> <b>Current playlist </b> </td></tr>' +
+        '<table border="1" width="100%"><col width="93%"><col width="7%"> <tr> <td colspan="2"> <b>Current playlist </b> </td></tr>' +
         playlistStr.join(" ") + '</table>');
+    $("#playList-" + playlist[playlistPointer]).css("background-color", "aqua");
 }
 
 // Remove song from playlist
 function deleteFromPlaylist(e) {
     console.log("deleteFromPlaylist2: " + e.id);
-
+    // If it's the last song, stop playing
+    if (playlist.length == 1) {	
+	player.pauseVideo();
+    }
     // Update playlist, its string, and its pointer
     i = playlist.indexOf(e.id);
     playlist.splice(i, 1);
@@ -211,15 +226,21 @@ function deleteFromPlaylist(e) {
     if (playlist.length > 0 && i <= playlistPointer) {
         // Then the currently playing song is removed: move the pointer to that of the previous song.
         // Shouldn't be here, though, if the song being removed is the last in the playlist.
-        playlistPointer = (playlistPointer - 1 + playlist.length) % playlist.length;
+        playlistPointer = (playlistPointer - 1 + playlist.length) % playlist.length;	
+	// If the current playing song is the deleted song, play the previous song. rgb(0, 255, 255) is aqua	
+	if ($("#playList-" + e.id).css("background-color") == "rgb(0, 255, 255)") {
+	    player.loadVideoById(playlist[playlistPointer]);
+            player.playVideo();
+	}
     }
 
     console.log("updated playlist:\n" + playlist);
 
     // Update UI
     $('#playList').html(
-        '<table border="1" style="width:50%"><tr> <td><b> Current playlist </b></td></tr>' +
+        '<table border="1" style="width:100%"><col width="93%"><col width="7%"><tr> <td colspan="2"><b> Current playlist </b></td></tr>' +
         playlistStr.join(" ") + '</table>');
+    $("#playList-" + playlist[playlistPointer]).css("background-color", "aqua");
 }
 
 
@@ -250,14 +271,15 @@ function search() {
         var str = '';
 
         for (var i = 0; i < response.items.length; i++) {
-            str += '<tr><td>' + (i + 1) + ')' + response.items[i].snippet.title +
-                '<img name="' + response.items[i].snippet.title +
-                '"src="icons/addSong.png" id="' + response.items[i].id.videoId +
-                '" onclick="addToPlaylist(this)" style="width:15px;height:15px;"> </td></tr>';
+            str += '<tr><td><img src="' + response.items[i].snippet.thumbnails.default.url + '"></td><td><b>' + (i + 1) + ')</b> ' + response.items[i].snippet.title + 
+		'</br> Uploaded by:' + response.items[i].snippet.channelTitle + '</br> Upload date: ' + response.items[i].snippet.publishedAt + ' </td>' + 
+                '<td align="center"><img name="' + response.items[i].snippet.title +
+                '"src="icons/addSong.png" id="' + response.items[i].id.videoId + 
+                '" onclick="addToPlaylist(this)" style="width:40px;height:40px;"></td></tr>';
         }
 
         $('#search-container')
-            .html('<table border="1" style="width:50%"><tr> <td> <b> Search Result </b></td></tr>' + str + '</table>');
+            .html('<table border="1" style="width:100%"><col width="20%"><col width="70%"><col width="10%"><tr> <td colspan="3"> <b> Search Result </b></td></tr>' + str + '</table>');
     });
 }
 
